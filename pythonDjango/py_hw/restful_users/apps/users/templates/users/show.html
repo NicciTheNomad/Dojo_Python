@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>Show User</title>
+</head>
+<body>
+    <h3>{{user.name}} User Information</h3>
+    <table border="1" padding="5">
+        <thead>
+            <th>ID: {{user.id}}</th>
+            <th>First Name: {{user.first_name}}</th>
+            <th>Last Name: {{user.last_name}}</th>
+            <th>Email: {{user.email}}</th>
+            <th>Created At: {{user.created_at}}</th>
+            <th>Updated At: {{user.updated_at}}</th>
+            <th>Actions: <a href="/users/{{user.id}}/destroy">DELETE</a> | <a href="/users/{{user.id}}/edit"></a>EDIT</th>
+        </thead>
+    </table>
+    
+</body>
+</html>

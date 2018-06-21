@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ninja.css') }}">
+</head>
+<body>
+    <div id="container">
+        <p>Your Gold: {{ num }}</p>
+        <div class='ninja_options'>
+            <h3>Farm</h3>
+            <h5>(earns 10 - 20 golds)</h5>
+            <form action="/ninja_gold" method="post">
+                <input type="hidden" name="building" value="farm"/>
+                <input type='submit' name="farm">
+                <input class='gold' type="submit" value="Find Gold!" />
+            </form>
+        </div>
+        <div class='ninja_options'>
+            <h3>Cave</h3>
+            <h5>(earns 5 - 10 golds)</h5>
+            <form action="/ninja_gold" method="post">
+                <input type="hidden" name="building" value="cave" />
+                <input class='gold' type="submit" value="Find Gold!" />
+            </form>
+        </div>
+        <div class='ninja_options'>
+            <h3>House</h3>
+            <h5>(earns 2 - 5 golds)</h5>
+            <form action="/ninja_gold" method="post">
+                <input type="hidden" name="building" value="house" />
+                <input class='gold' type="submit" value="Find Gold!" />
+            </form>
+        </div>
+        <div class='ninja_options'>
+            <h3>Casino</h3>
+            <h5>(earns 0 - 50 golds)</h5>
+            <form action="/ninja_gold" method="post">
+                <input type="hidden" name="building" value="casino"/>
+                <input class='gold' type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+        <div class='ninja_options'>
+            <form method="post" action="/guess">
+                <input type="hidden" name='action' value='create guess'>
+                <input type='number' name='guess'>
+                <input type='submit' value='create guess'>
+            </form>
+        </div>
+        <div class="log_book">
+            <p>Ninja Activity Log:</p>
+            <textarea name="ninja_activities" id="log" cols="60" rows="10"></textarea>
+        </div>
+    </div> 
+</body>
+</html>

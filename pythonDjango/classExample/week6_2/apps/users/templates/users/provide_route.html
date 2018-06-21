@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h3>This is unknown route.  Please return to home page.</h3>
+    {{ messages }}
+    {% if messages %}
+    <ul>
+        {% for msg in messages %}
+        <li>{{msg.message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form action="/" method="post">
+        {% csrf_token %}
+         Return to home page:
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

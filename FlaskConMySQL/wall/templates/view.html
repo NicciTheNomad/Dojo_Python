@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/view.css') }}">
+
+</head>
+<body>
+    {% with messages = get_flashed_messages()%} 
+        {% if messages %} 
+            {% for message in messages%}
+                <p>{{ message }}</p>
+            {% endfor %} 
+        {% endif %} 
+    {% endwith %}
+    <fieldset>
+        <h2>Coding Dojo Wall: </h2>
+        <span class="logged_user">
+             {{ logged_user.first_name }} is logged in. Welcome {{ logged_user.first_name}}!!!
+            <form action="/logout">
+                Log Out: <input type="submit" name="submit">
+            </form>
+        </span>
+    </fieldset>
+
+    <h4>Post Message:</h4>
+    <fieldset>
+    <form action="/store_message" method='POST'>
+        <textarea name="message" id="message" placeholder="Write Post Message Here..."></textarea>
+        <button>Post Message: <input type="submit" name="submit"></button>
+    </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Registered Messages</legend>
+        {% for message in all_messages %}
+            <p>First Name: {{ message['first_name']}}, Created At: {{ message['created_at'] }}</p>
+            <p>Message: {{ message['message'] }}</p>
+        {% endfor %}
+    </fieldset>
+    <fieldset>
+        <legend>Registered Messages</legend>
+        {% for message in all_messages %}
+        <p>First Name: {{ message['first_name']}}, Created At: {{ message['created_at'] }}</p>
+        <p>Message: {{ message['message'] }}</p>
+        {% endfor %}
+    </fieldset>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    {{ user.fname }}
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <fieldset>
+        <p>Thanks for submitting this form! You have submitted this form {{ request.session.tries }} now</p>
+        <h4>Submitted Information</h4>
+    </fieldset>
+    <fieldset>
+            <table border="1" padding='5'>
+                <thead>
+                    <th>fname</th>
+                    <th>lname</th>
+                    <th>location</th>
+                    <th>language</th>
+                    <th>comment</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ user.fname }}</td>
+                        <td>{{ user.lname }}</td>
+                        <td>{{ user.location }}</td>
+                        <td>{{ user.language }}</td>
+                        <td>{{ user.comment}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ request.session.fname }}</td>
+                        <td>{{ request.session.lname }}</td>
+                        <td>{{ request.session.location }}</td>
+                        <td>{{ request.session.language }}</td>
+                        <td>{{ request.session.comment}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+    <!-- <table>
+        <tbody>
+            <tr>
+                <td>First Name:</td>
+                <td>{{ request.session.fname }}</td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td>{{ request.session.lname }}</td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td>{{ request.session.location }}</td>
+            </tr>
+            <tr>
+                <td>Language:</td>
+                <td>{{ request.session.language }}</td>
+            </tr>
+            <tr>
+                <td>Comment:</td>
+                <td>{{ request.session.comment }}</td>
+            </tr>
+        </tbody>
+    </table> -->
+    </fieldset>
+</body>
+
+</html>

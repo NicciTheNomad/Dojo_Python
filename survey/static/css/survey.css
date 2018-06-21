@@ -1,0 +1,15 @@
+*
+{
+    width: 970px;
+}
+.background{
+    background-color: orange;
+    color: white;
+}
+
+.button{
+    width:200px;
+    color:white;
+    background-color: steelblue;
+    text-align: center;
+}

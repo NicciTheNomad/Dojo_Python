@@ -1,0 +1,14 @@
+.red{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    color:white;
+    border: 3px solid black;
+}
+.green{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    color:white;
+    border: 3px solid black;
+}

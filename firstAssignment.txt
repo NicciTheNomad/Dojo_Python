@@ -1,0 +1,17 @@
+pip install Django - pip is a package management system used to install and manage software packages written in Python.  Django is a Python framework.
+
+pip list - this either lists the already installed packages for lists the packages available to install
+
+pip install Django (We know you already ran this one. What information do you see returned in terminal after this command?): The directory '/Users/niccithenomad/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/niccithenomad/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+
+
+pip freeze (What's the difference between freeze and list?) -output installed packaged in requirements format. pip freeze does NOT include editables. the output format freeze, give the standard requirement format that is used to install.
+
+First cd into your Desktop directory (cd ~/Desktop), then run this command: pip freeze > requirements.txt. What do you see when you ls? What's inside this file? i see nothing
+
+pip uninstall Django  -  this is system wide removal of Django
+
+pip show Django - pip show, displays infomation about one more installed packages. it would show the version(s) installed locally on the system.
+
+pip search Flask. This one might take a moment to execute. - i get a lot of information that isn't relevant to me! lol.

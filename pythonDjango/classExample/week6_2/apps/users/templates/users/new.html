@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register New User</title>
+</head>
+<body>
+    <form action="/users" method="POST">
+        {%csrf_token%}
+        <input type="text" name="name">
+        <input type="text" name="email">
+        <input type="submit" name="submit">
+    </form>
+    <form action="/users">
+        {%csrf_token%}
+        <p>Return to Registered Users:</p>
+        <input type="submit" name="submit">
+    </form>
+    
+</body>
+</html>

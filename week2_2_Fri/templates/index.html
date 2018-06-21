@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 2 Py - Weekend Demo</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>id</th>
+            <th>title</th>
+            <th>text</th>
+            <th>action</th>
+        </thead>
+        <tbody>
+            {% for moment in moments %}
+            <tr>
+                <td>{{ moment.id }}</td>
+                <td>{{ moment.title }}</td>
+                <td>{{ moment.text }}</td>
+                <td><a href="/show/{{moment.id}}">Show</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/moments/create" method="POST">
+        <input type="text" name='title'>
+        <input type="text" name='text'>
+        <input type="submit" name=''>
+    </form>
+    
+</body>
+</html>

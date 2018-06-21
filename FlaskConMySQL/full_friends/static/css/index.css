@@ -1,0 +1,52 @@
+*{
+
+}
+#container{
+    width: 970px;
+    height: 400px;
+    padding: 20px;
+    padding: 20px;
+    background-color: mediumturquoise;
+    color: darkolivegreen;
+}
+
+a{
+    text-decoration: none;
+    border: 1px solid darkolivegreen;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 1px;
+    background-color: lightgrey;
+    color: darkolivegreen
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    width: 200px;
+    height: 25px;
+    vertical-align: center;
+    border: 1px solid black;
+}
+
+form{
+    margin: 40px 0px;
+    width: 255px;
+    display: inline-block;
+}
+
+label{
+    margin: 0px 0px 0px 8px;
+    display: inline-block;
+
+}
+
+input{
+    display: inline-block;
+    position: relative;
+    vertical-align: right;
+    color: darkolivegreen;
+    background-color: lightgray;
+}

@@ -1,0 +1,14 @@
+config = {
+    'host': 'localhost',
+    'database': db, # we got db as an argument
+    'user': 'root',
+    'password': 'root',
+    'port': '3306' # change the port to match the port your SQL server is running on
+}
+
+port issue #2003 - Operational Error, due to port 3306 defined to be used and port 3307 actually working
+
+mis-spell "localhost" - doesen't matter, as file uses IP addy, not host string name
+
+change or alter IP addy - no error BUT the IP change makes the database URI connection time out.
+

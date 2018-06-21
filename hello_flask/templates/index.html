@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My first template</title>
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='my_style.css')}}">
+        <script type="text/javascript" src="{{ url_for('static', filename='my_script.js') }}"></script>
+    
+    </head>
+    <body>
+        <h3>My flask template with embedded python</h3>
+        <p>Phrase: {{ phrase }}</p>
+        {% for x in range(1,times): %}
+        <p>{{ x }}</p>
+        {% endfor %}
+        <p>HI Flask! woo hoo!!!</p>
+        <p>My partner in parenting is: {{name}}</p>
+    </body>
+</html>

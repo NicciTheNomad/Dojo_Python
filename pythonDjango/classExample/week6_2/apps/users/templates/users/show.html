@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Week6_2</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/users.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <h2>{{user.name}} User Information</h2>
+    <table border="1" padding='5'>
+        <thead>
+            <th>ID: {{ user.id }}</th>
+            <th>name: {{ user.name }}</th>
+            <th>email: {{ user.email }}</th>
+            <th>Created At: {{ user.created_at }}</th>
+            <th>Updated At: {{ user.created_at }}</th>
+            <th>Actions: <a href="/users/{{user.id}}/delete">DELETE</a> |
+            <a href="/users/{{user.id}}/edit">EDIT</a></th>
+        </thead>
+    </table>
+
+</body>
+
+</html>

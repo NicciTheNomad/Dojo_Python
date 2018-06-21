@@ -1,0 +1,33 @@
+*
+{
+
+}
+
+#container{
+    color: red;
+    background-color: yellow;   
+    width: 970px;
+    height: 600px;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    color: orange;
+    text-align: center;
+}
+
+input{
+    display: block;
+    text-align: center;
+}
+
+form{
+    margin: 25px;
+    padding: 25px;
+    color: blue;
+    background-color: lime;
+}

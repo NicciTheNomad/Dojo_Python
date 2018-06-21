@@ -1,0 +1,28 @@
+*{
+
+}
+#container{
+    width: 970px;
+    color: red;
+
+}
+
+.section{
+    width: 400px;
+    padding: 10px;
+    margin: 10px;
+    background-color: orange;
+}
+
+.word{
+
+}
+
+.clear{
+    background-color: #15FF00;
+}
+
+.word_list{
+    background-color: lightgoldenrodyellow;
+    color: black;
+}

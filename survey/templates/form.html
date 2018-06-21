@@ -1,0 +1,38 @@
+<!-- <html>
+    <head>
+        <title>Survey</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/survey.css') }}">
+    </head>
+
+    <body>
+        <div id="container">
+            <div class='width'>
+                <h3>Submitted Information</h3>
+                <h6>Name: {{name}}</h6>
+
+                <a href="/logout">Click to return to main page</a>
+                
+            </div>
+        </div>
+    </body>
+</html> result.html -->
+
+<!doctype html>
+<html>
+    <head>
+        <title>Survey Results</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/survey.css') }}">
+    </head>
+
+    <body class="background">
+        <table border=1>
+            {% for key, value in result.iteritems() %}
+            <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a class='button' href="/logout">Click here to log out</a>
+    </body>
+</html>

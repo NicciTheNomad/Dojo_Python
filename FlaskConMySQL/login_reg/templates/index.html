@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+
+<body>
+    <fieldset>
+        {% with messages = get_flashed_messages()%} 
+            {% if messages %} 
+                {% for message in messages%}
+                    <p>{{ message }}</p>
+                {% endfor %} 
+            {% endif %} 
+        {% endwith %}
+        <legend>Register:</legend>
+        <form action="/register" method="POST">
+            First Name: <input type="text" name="first_name"> 
+            Last Name: <input type="text" name="last_name"> 
+            Register Email: <input type="text" name="email"> 
+            Password: <input type="text" name="password"> 
+            Confirm Password: <input type="text" name="confirm_password">
+            <input type="submit" name="SUBMIT">
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Log In:</legend>
+            <form action="/login" method='POST'>
+                First Name: <input type="text" name="first_name"> 
+                Last Name: <input type="text" name="last_name">
+                Password: <input type="text" name="password"> 
+                Confirm Password: <input type="text" name="confirm_password">
+                <input type="submit" name="SUBMIT">
+            </form>
+    </fieldset>
+    <fieldset>
+        <legend>Registered Users</legend>       
+            {% for user in all_users %}
+            <p>ID: {{ user['id'] }}</p>
+            <p>First Name: {{ user['first_name'] }}</p>
+            <p>Created At: {{ user['created_at'] }}</p>
+            {% endfor %}
+    </fieldset>
+</body>
+
+</html>

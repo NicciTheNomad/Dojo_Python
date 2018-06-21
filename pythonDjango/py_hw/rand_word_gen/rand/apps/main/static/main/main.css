@@ -1,0 +1,21 @@
+*{
+
+}
+#container{
+    align: center;
+    width: 970px;
+}
+
+fieldset{
+    width: 500px;
+    height: 100px;
+    background-color: turquoise;
+    color: black;
+    font: 48px;
+}
+ 
+button{
+    font:18px;
+    background-color: red;
+    color: lightblue;
+}

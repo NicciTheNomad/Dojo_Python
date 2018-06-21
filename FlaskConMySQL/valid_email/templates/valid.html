@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Valid Users</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/valid.css') }}">
+</head>
+
+<body>
+     {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for message in messages %}
+                <p class="flash">{{message}}</p>
+            {% endfor %} 
+        {% endif %} 
+    {% endwith %}
+    {{ all_users }}
+
+    <h2>Valid Users</h2>
+    {% for user in all_users %}
+        <p>ID: {{ user['id'] }}</p>
+        <p>Email: {{ user['email'] }}</p>
+        <p>Created At: {{ user['created_at'] }}</p>
+    {% endfor %}
+
+    <form action="/delete">
+        <label for="delele_user">Enter ID number of user to delete: <input type='text' name='delete_user' id='delete_user'></label>
+        <input type="submit" value="Delete User">
+    </form>
+
+    <form action="/">
+        <input type="submit" value="Return Home: Enter New Email">
+    </form>
+</body>
+
+</html>

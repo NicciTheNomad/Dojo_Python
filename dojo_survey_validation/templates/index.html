@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+    <body>
+        <div id='container'>
+            <h1>Enter User Information!</h1>
+            {% with messages = get_flashed_messages() %} 
+                {% if messages %} 
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %} 
+                {% endif %} 
+            {% endwith %}
+
+            <form action="/process" method='POST'>
+                Your Name:<input type="text" name="name">
+                
+                <select name="location">
+                    <option value="0"></option>
+                    <option value="seattle">Seattle</option>
+                    <option value="tamarindo">Tamarindo</option>
+                    <option value="berlin">Berlin</option>
+                </select>
+
+                <select name="language">
+                    <option value="0"></option>
+                    <option value="ruby">Ruby</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                </select>
+
+                <textarea name="description"></textarea>
+
+                <input type="submit" value="submitted_info">
+            </form>
+        </div>
+    </body>
+</html>

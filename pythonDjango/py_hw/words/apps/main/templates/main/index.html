@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'main/main.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div id="container">
+        <div class="section">
+            <form action="/process" method="POST">
+                {%csrf_token%}
+                <p>Choose color</p>
+                <input type="text" name="word">
+                <!-- <select name="color">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>    -->
+                <div>
+                    <label for="color_next">Select Color:</label>
+                    <label><input type="radio" name="color_next" value="yellow">Yellow</label>
+                    <label><input type="radio" name="color_next" value="purple">Purple</label>
+                    <label><input type="radio" name="color_next" value="black">Black</label>
+                </div>   
+                <input type="checkbox" name="increase"> show in BIG font<br>   
+                <a href="/"><button>Add to Session</button></a>
+            </form>
+        </div>
+        <div class="word_list">
+            {% if request.session.words %} 
+                {% for word in request.session.words %}
+                    <p><span style="color:{{ word.color_next }}" class="{{ word.increase }}">{{word.content}}</span> - added on {{ word.created_at
+                }}</p>
+            {% endfor %} {% endif %}
+            <br>
+            <a href="/clear_session"><button>Clear Session</button></a>
+        </div>
+        <div class="section">
+        
+            
+
+        </div>
+    </div>
+    
+</body>
+</html>

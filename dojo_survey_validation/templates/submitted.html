@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Submitted Form</title>
+</head>
+    <body>
+        <div id='container'>
+            <p>{{session['submitted_info']}}</p>
+            <h1>Submitted Information: {{ result.name }}</h1>
+            <p>Name: {{ result.name }} </p>
+            <p>Location: {{ result.location }}</p>
+            <p>Favorite Language: {{ result.language }} </p>
+            <p>Comment: {{ result.description }}</p>
+
+        </div>
+    </body>
+</html>
