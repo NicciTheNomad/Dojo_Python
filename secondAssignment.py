@@ -57,3 +57,18 @@ def newList(arr):
     print w           
 
 newList([19,2,54,-2,7,12,98,32,10,-3,6])
+
+# -------------
+words = "It's thanksgiving day. It's my birthday,too!"
+x = words.find('day')
+print x
+y = words.replace('day', 'month')
+print y
+v = [2,54,-2,7,12,98]
+print min(v)
+print max(v)
+the_list = ['hello',54,-2,7,12,98]
+count = 0
+while count < 6:
+    print the_list[count]
+    count+=1

@@ -1,15 +1,19 @@
-# def characterFind(array,character):
-#     for i in range(0,len(array)):
-#         for c in array[i]:  
-#             if c == character:
-#                 print array[i]
+def characterFind(array,character):
+    char_list = []
+    for i in range(0,len(array)):
+        for c in array[i]:  
+            if c == character:
+                char_list.append(array[i])
+                print array[i]
+                print char_list
                
-# characterFind(['nicci','boquitb','ray','maya'],'r')     
+characterFind(['nicci','boquitbr','ray','maya'],'r')     
 
 
 #Minadaya code for checking array item type
 def list_type (list):
     total = 0
+    new_list = [] 
     for x in list:
         #print x
         if type (x) == int:
@@ -21,10 +25,14 @@ def list_type (list):
                 print "sting:", x
         if isinstance (list, str):
             print "this is a list of strings"
-        else:
-            if isinstance (list, int):
-                print "this is a list of numbers"
-            else:
-                print "this is a mixed list" 
-    print "sum", total          
-list_type ([1,2,3,'boo'])
+        # else:
+            # if isinstance (list, int):
+                # print "this is a list of numbers"
+            # else:
+                # print "this is a mixed list" 
+    # print "sum", total 
+    # print 'new list: ', new_list       
+
+
+
+# list_type (['nicci', 1,'work',2,3,'boo', 'o'])

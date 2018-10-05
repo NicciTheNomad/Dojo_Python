@@ -38,7 +38,21 @@
 # dict = {keys[i]: values[i] for i in range(len(keys))}
 name = ["Anna", "Eli", "Pariece", "Brendan", "Amy", "Shane", "Oscar"]
 favorite_animal = ["horse", "cat", "spider", "giraffe", "ticks", "dolphins", "llamas"]
-dict = {name[i]: favorite_animal[i] for i in range (len(name))}
+print len(name)
+print len(favorite_animal)
+short = []
+# long = []
+# print long
+# long.extend(name)
+# print long
+if len(name) == len(favorite_animal):
+    print name
+    long =[]
+    long = long.extend(name)
+    print long
+    # short = short.append('favorite_animal')
+    # dict = {long[i]: short[i] for i in range (len(long))}
+    # dict = {long[i]: short[i] for i in range (len(long))}
 print (dict)
 
 # keys = ('name', 'age', 'food')

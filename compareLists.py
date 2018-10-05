@@ -4,5 +4,5 @@ def listCompare (list_one, list_two):
     else:
         print "The lists are not the same"
 
-# listCompare([1,2,5,6,2],[1,2,5,6,2])
+listCompare([1,2,5,6,2],[1,2,5,6,2])
 listCompare('four','nine')
