@@ -1,5 +1,8 @@
-*
-{
-    color: green;
-    background-color: blue;
+* {
+  color: green;
+  background-color: blue;
+}
+img {
+  width: 200px;
+  height: 180px;
 }
