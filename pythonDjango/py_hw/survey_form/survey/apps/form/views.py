@@ -23,7 +23,9 @@ def display(request, user_id):
     context = {
         "user": User.objects.get(id=user_id), 
     }
-    print context['user'].__dict__
+    # print context['user'].__dict__
+    print (context['user'].__dict__)
+    
     return render(request, 'form/result.html', context) 
             
 
