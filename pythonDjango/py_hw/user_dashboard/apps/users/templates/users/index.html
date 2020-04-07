@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"> -->
     <title>User Dashboard</title>
+    {% load bootstrap3 %} {% bootstrap_css %} {% bootstrap_javascript %}
+
+    <!-- had {% load static %} -->
+    <!-- The line above tells Django to be ready to listen for static files -->
+
+    <!-- below, loads django static tag -->
+    {% load staticfiles %}
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" media="screen" title="no title" charset="utf-8">
 </head>
+
 <body>
-    
-    <div>
+
+    <section class='border'>
+        <nav class="navbar navbar-default">
+            <button>Test App</button>
+            <a class='navbar-link' href="new/">Home</a>
+            <a class='navbar-link' href="new/">Sign-In</a>
+        </nav>
+
+    </section>
+    <section class='border'>
+        <h2>Outside fieldset</h2>
+        <fieldset disabled="scheduler-border">
+            <h2>Inside field</h2>
+        </fieldset>
+    </section>
+
+    <div id="textbox">
         <h3>Welcome to the Test</h3>
-        <p>We're going to build a cool application.</p>
-        <button><a href="/">Start</a></button>
+        <p>We're going to build a cool application using and MVC framework. This application was built by Nicci.</p>
+        <button><a href="new/">Start</a></button>
     </div>
-    
+    <!-- <div style="background-color: #cfc ; padding: 10px; border: 1px solid green"> -->
+    <div id="about">
+        <div id="about-details">
+            <h5>Manage Users</h5>
+            <p>Using this application, you'll learn how to add, remove and edit users for the application.</p>
+        </div>
+        <div id="about-details">
+            <h5>Leave Messages</h5>
+            <p>Using this application, you'll learn how to add, remove and edit users for the application.</p>
+        </div>
+        <div id="about-details">
+            <h5>Edit User Information</h5>
+            <p>Using this application, you'll learn how to add, remove and edit users for the application.</p>
+        </div>
+    </div>
+
 </body>
+
 </html>

@@ -8,3 +8,18 @@ from .models import *
 
 def index(request):
     return render(request, 'users/index.html')
+
+def new(request):
+    return render(request, 'users/new.html')
+
+def signin(request):
+    return render(request, 'users/signin.html')  
+
+def register(request):
+    return render(request, 'users/register.html')
+
+def edit(request):
+    return render(request, 'users/edit.html')
+
+def dashboard(request):
+    return render(request, 'users/dashboard.html')              
