@@ -11,15 +11,15 @@ def index(request):
 
 def register(request):
     result = User.objects.validate_reg(request.POST)
-    print "above if"*5
+    print ("above if"*5)
     if type(result) == list:
         for err in result:
             messages.error(request,err)
-            print "inside for"*5
+            print ("inside for"*5)
         return redirect('/')    
     request.session['user_id'] = result.id
     messages.success(request,"Successful registration") 
-    print "above last return"*5   
+    print ("above last return"*5)   
     return redirect('/success')
 
 def log_in(request):
@@ -42,7 +42,20 @@ def success(request):
     }        
     return render(request,'users/success.html', context)
 
+# this log out will not work for django 3x because 'keys' returns an iterator instead of a list :-/
+# def logout(request):
+#     for key in request.session.keys():
+#         del request.session[key]
+#     return redirect('/')  
+
 def logout(request):
-    for key in request.session.keys():
-        del request.session[key]
-    return redirect('/')    
+    try:
+        del request.session['user_id']
+    except KeyError:
+        pass
+    return redirect('/')  
+
+
+      
+      
+      

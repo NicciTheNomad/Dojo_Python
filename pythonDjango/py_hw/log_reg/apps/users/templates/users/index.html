@@ -14,9 +14,7 @@
         <li>{{msg.message}}</li>
         {% endfor %}
     </ul>
-    {% endif %} 
-    {{ errors }} 
-    {% if errors %}
+    {% endif %} {{ errors }} {% if errors %}
     <ul>
         {% for err in errors %}
         <li>{{err.error}}</li>
