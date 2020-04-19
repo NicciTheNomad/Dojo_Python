@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quotelists/quote.css' %}" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>Quotes</title>
+</head>
+
+<body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    <div>
+        <a href="/quotes">Home</a> | <a href="/logout">Logout</a>
+        <h2>Posts by {{name}}</h2><br>
+    </div>
+    {% for quote in all_your_quotes %}
+        <p>{{forloop.counter}}:  <span>{{quote.quote_author}}</span>  {{ quote.quote }}</p>
+    {% endfor %}
+</body>
+
+</html>

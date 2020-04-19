@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quotelists/quote.css' %}" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/logout">Logout</a> {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    <h2>Welcome, {{ user.name }}!</h2>
+    <fieldset>
+        <legend>Quotable Quotes</legend>
+        <table border='1' padding='5'>
+            {% for quote in reduced_quotes %}
+            <div class="quotebox">
+                {{quote.quote_author}}:  {{quote.quote}}
+                <div>
+                    <i>Posted by <a href="{{quote.quote_creator.name}}">{{quote.quote_creator.name}}</a></i>
+                    <a href="/quotes/{{quote.id}}/add_to_logged_user_list">Add to My List '{{quote.id}}'</a>
+                </div>
+            </div>
+            {% endfor %}
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your Favorites</legend>
+        <table border='1' padding='5'>
+            {% for quote in users_quotes %}
+            <div class="quotebox">
+                {{quote.quote}}
+                <div>
+                    <i>Posted by <a href="{{quote.quote_creator.name}}">{{quote.quote_creator.name}}</a></i>
+                    <button><a href="/quotes/{{quote.id}}/remove_from_logged_user_list">Remove From My List '{{quote.id}}'</a></button>
+                </div>
+            </div>
+            {% endfor %}
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Contribute A Quote: </legend>
+        <form action="/quotes/add" method="POST">
+            {%csrf_token%}
+            <p>Author of Quote: </p><input type="text" name="quote_author"><br>
+            <p>Quote: </p><input type="text" name="quote"><br>
+            <button type="submit"> Submit </button>
+        </form>
+    </fieldset>
+
+
+
+
+    <fieldset>
+        <legend>Your Favorites</legend>
+        <table border='1' padding='5'>
+            {% for quote in quotes %}
+            <div class="quotebox">
+                {{quote.quote}}
+                <div>
+                    <i>Posted by <a href="{{quote.quote_creator.name}}">{{quote.quote_creator.name}}</a></i>
+                    <button><a href="/quotes/{{quote.id}}/remove_from_logged_user_list">Remove From My List '{{quote.id}}'</a></button>
+                </div>
+            </div>
+            {% endfor %}
+        </table>
+    </fieldset>
+</body>
+
+</html>

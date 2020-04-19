@@ -1,0 +1,19 @@
+*{
+
+}
+.quotebox {
+    width: 300px;
+    height: 200px;
+    font-family: 'Times New Roman', Times, serif;
+    font: 10px;
+    border: 2px solid black;
+    padding: 3px;
+    margin: 2px;
+    /* color: red; */
+}
+.red{
+    color: red;
+}
+span{
+    color: red;
+}
